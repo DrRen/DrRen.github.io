@@ -1,0 +1,45 @@
+#wrapper {
+  background: #000;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  overflow:  hidden;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+#container {
+  background: #000;
+  height:2000px;
+  background: url("60_1080р/veryHigh_000000.jpeg") no-repeat;
+  background-size: 100%;
+  width: -webkit-fill-available;
+  position: absolute;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: absolute;
+}
+
+#box1 {
+  top: 50px;
+  left: 200px;
+}
+
+#box2 {
+  top: 350px;
+  left: 400px;
+}
+
+#box3 {
+  bottom: 20px;
+  left: 400px;
+}
+body{
+  margin: 0;
+}
+.wrapp{
+
+}
