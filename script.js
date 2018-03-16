@@ -25,6 +25,9 @@ function preload(path, max) {
     }
     images[i].src = path + zeros + i+".jpeg";
   }
+  wrapper.style.display="block";
+  mpb.style.display="none";
+  $("#wrapper").smoothWheel();
 }
 preload("60_428x240/ultraLow_", 1164)
 
@@ -42,10 +45,3 @@ function getImageIndex() {
   }
   return zeros + index;
 }
-$(document).ready(function(){
-  $(document).ready(function() {
-    wrapper.style.display="block";
-    mpb.style.display="none";
-    $("#wrapper").smoothWheel();
-  });
-});
