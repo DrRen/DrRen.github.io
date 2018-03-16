@@ -17,6 +17,7 @@ preload("60_1080р/veryHigh_", 1164)
 wrapper.onscroll = function() {
   container.style.background = 'url('+images[wrapper.scrollTop].src+') no-repeat';
   container.style.backgroundPositionY = wrapper.scrollTop + "px";
+  container.style.backgroundSize = "100%";
 }
 
 function getImageIndex() {
