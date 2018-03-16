@@ -12,7 +12,7 @@ function preload(path, max) {
   }
 
 }
-preload("60_854x480/Low_", 1164)
+preload("60_ 854x480/Low_", 1164)
 
 wrapper.onscroll = function() {
   container.style.background = 'url('+images[wrapper.scrollTop].src+') no-repeat';
