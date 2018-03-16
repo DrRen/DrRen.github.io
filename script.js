@@ -53,10 +53,13 @@ function setLoadIndicator() {
       complited++;
     }
   }
-  progress_circle.gmpc('animate', complited/imagesCount*100, 10);
+  if (complited>=imagesCount*0.3){
+    unlockOnLoad();
+  }
+  progress_circle.gmpc('animate', complited/(imagesCount*0.3)*100, 10);
 }
 
-setInterval(unlockOnLoad, 100);
+//setInterval(unlockOnLoad, 100);
 setInterval(setLoadIndicator, 10);
 
 preload("60_428x240/ultraLow_", imagesCount);
