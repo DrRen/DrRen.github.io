@@ -35,6 +35,7 @@ function getImageIndex() {
 
 function unlockOnLoad() {
   if (!unlocked) {
+    preload("60_1080р/veryHigh_", imagesCount);
     wrapper.style.display = "block";
     mpb.style.display = "none";
     $("#wrapper").smoothWheel();
