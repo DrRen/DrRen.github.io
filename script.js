@@ -75,8 +75,8 @@ function setLoadIndicator() {
 }
 
 function applyHigh() {
-  for (var i=0; i<images.length; i++){
-    if (images[i].complete){
+  for (var i=0; i<imagesHigh.length; i++){
+    if (imagesHigh[i].complete){
       images[i]=imagesHigh[i];
     }
   }
