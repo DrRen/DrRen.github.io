@@ -12,19 +12,13 @@ var progress_circle = $(".my-progress-bar").gmpc({
 function preload(path, max) {
   var index = max + "";
   for (var i = 0; i < index; i++) {
-    document.clear;
-    //console.log("загрузка "+(i+1)+" из "+ index)
-
-    progress_circle.gmpc('animate', i / index * 100, 3000);
-
-
-    //
     images[i] = new Image();
     var zeros = "";
     for (var j = 0; j < 6 - (i + "").length; j++) {
       zeros += "0";
     }
     images[i].src = path + zeros + i + ".jpeg";
+
   }
 
 }
@@ -44,8 +38,23 @@ function unlockOnLoad() {
     mpb.style.display = "none";
     $("#wrapper").smoothWheel();
   }
-
 }
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  while (true) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+function setLoadIndicator() {
+  progress_circle.gmpc('animate', images.length/imagesCount*100, 10);
+}
+
+setInterval(unlockOnLoad, 100);
+setInterval(setLoadIndicator, 10);
 
 preload("60_428x240/ultraLow_", imagesCount);
 
