@@ -34,7 +34,7 @@ function getImageIndex() {
 }
 
 function unlockOnLoad() {
-  if (images[imagesCount-1].complete && !unlocked) {
+  if (!unlocked) {
     wrapper.style.display = "block";
     mpb.style.display = "none";
     $("#wrapper").smoothWheel();
