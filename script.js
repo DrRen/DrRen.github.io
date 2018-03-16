@@ -47,7 +47,15 @@ function sleep(ms) {
 }
 
 function setLoadIndicator() {
-  progress_circle.gmpc('animate', images.length/imagesCount*100, 10);
+  var max=0;
+  for (var i=0; i<images.length; i++){
+    if (!images[imagesCount-1].complete){
+      if (max<i){
+        max=i;
+      }
+    }
+  }
+  progress_circle.gmpc('animate', max/imagesCount*100, 10);
 }
 
 setInterval(unlockOnLoad, 100);
