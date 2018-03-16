@@ -1,5 +1,6 @@
 var images = new Array()
 var imagesCount = 1164;
+var unlocked=false;
 var progress_circle = $(".my-progress-bar").gmpc({
   line_width: 6,
   color: "#1ABC9C",
@@ -9,7 +10,7 @@ var progress_circle = $(".my-progress-bar").gmpc({
   text: "Loading..."
 });
 
-function preload(path, max) {
+async function preload(path, max) {
   var index = max + "";
   for (var i = 0; i < index; i++) {
     images[i] = new Image();
@@ -18,7 +19,7 @@ function preload(path, max) {
       zeros += "0";
     }
     images[i].src = path + zeros + i + ".jpeg";
-
+    //await sleep(10);
   }
 
 }
@@ -33,20 +34,16 @@ function getImageIndex() {
 }
 
 function unlockOnLoad() {
-  if (images.length>=imagesCount-1) {
+  if (images.length>=imagesCount-1 && !unlocked) {
     wrapper.style.display = "block";
     mpb.style.display = "none";
     $("#wrapper").smoothWheel();
+    unlocked=true;
   }
 }
 
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  while (true) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function setLoadIndicator() {
@@ -56,7 +53,7 @@ function setLoadIndicator() {
 setInterval(unlockOnLoad, 100);
 setInterval(setLoadIndicator, 10);
 
-preload("60_428x240/ultraLow_", imagesCount);
+preload("60_1080р/veryHigh_", imagesCount);
 
 wrapper.onscroll = function() {
   container.style.background = 'url(' + images[wrapper.scrollTop].src + ') no-repeat';
