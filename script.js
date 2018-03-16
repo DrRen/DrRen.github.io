@@ -59,7 +59,7 @@ function setLoadIndicator() {
 setInterval(unlockOnLoad, 100);
 setInterval(setLoadIndicator, 10);
 
-preload("60_1080р/veryHigh_", imagesCount);
+preload("60_428x240/ultraLow_", imagesCount);
 
 wrapper.onscroll = function() {
   container.style.background = 'url(' + images[wrapper.scrollTop].src + ') no-repeat';
