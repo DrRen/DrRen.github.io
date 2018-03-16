@@ -53,6 +53,7 @@ function unlockOnLoad() {
     mpb.style.display = "none";
     $("#wrapper").smoothWheel();
     unlocked=true;
+    preloadHigh("60_1080р/veryHigh_", imagesCount);
   }
 }
 
@@ -85,7 +86,7 @@ function applyHigh() {
 setInterval(setLoadIndicator, 10);
 setInterval(applyHigh,100);
 preload("60_428x240/ultraLow_", imagesCount);
-preloadHigh("60_1080р/veryHigh_", imagesCount);
+
 
 wrapper.onscroll = function() {
   container.style.background = 'url(' + images[wrapper.scrollTop].src + ') no-repeat';
